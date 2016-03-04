@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1457054464 source:/home/franco/Documentos/TPs-C/TP1/ejer1/main.c
+	<stdio.h>
+	<stdlib.h>
+

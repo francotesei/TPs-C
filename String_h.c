@@ -17,6 +17,9 @@ char *str_ncat(char*, const char*, size_t);
 int str_ncmp(const char*, const char*, size_t);
 char *str_ncpy(char*, const char*, size_t);
 char *str_pbrk(const char*, const char*);
+char *str_rchr(char*, int);
+size_t str_spn(const char*, const char*);
+char *str_str(const char*, const char*);
 
 //void main()//strcpy
 //{
@@ -188,18 +191,51 @@ char *str_pbrk(const char*, const char*);
 //    puts(str_ncpy(cad2,cad2,5));
 //}
 
-void main()//str_pbrk
-{
-    char cad[31],cad2[31];
+//void main()//str_pbrk
+//{
+//    char cad[31],cad2[31];
+//
+//    puts("\t\tIngrese cadena 1:\n\n\t\t");
+//    gets(cad);
+//    puts("\t\tIngrese cadena 2:\n\n\t\t");
+//    gets(cad2);
+//
+//    puts(str_pbrk(cad,cad2));
+//}
 
-    puts("\t\tIngrese cadena 1:\n\n\t\t");
-    gets(cad);
-    puts("\t\tIngrese cadena 2:\n\n\t\t");
-    gets(cad2);
+//void main()//str_rchr
+//{
+//    char cad[31];
+//
+//    puts("\t\tIngrese cadena 1:\n\n\t\t");
+//    gets(cad);
+//
+//    puts(str_rchr(cad,'s'));
+//}
 
-    puts(str_pbrk(cad,cad2));
-}
-
+//void main()//str_spn
+//{
+//    char cad[31], cad2[31];
+//
+//    puts("\t\tIngrese cadena 1:\n\n\t\t");
+//    gets(cad);
+//    puts("\t\tIngrese cadena 2:\n\n\t\t");
+//    gets(cad);
+//
+//    printf("\n\t Cantidad de caracteres: %d", str_spn(cad,cad2));
+//}
+//
+//void main()//str_str
+//{
+//    char cad[31],cad2[31];
+//
+//    puts("\t\tIngrese cadena 1:\n\n\t\t");
+//    gets(cad);
+//    puts("\t\tIngrese cadena 2:\n\n\t\t");
+//    gets(cad2);
+//
+//    puts(str_str(cad,cad2));
+//}
 
 //void *mem_chr(const void *s, int c, size_t n)
 //{
@@ -288,17 +324,17 @@ void main()//str_pbrk
 ////entonces el comportamiento no está definido.
 //}
 
-char *str_chr(char *s, int c)
-{
-    while(*s && *s != (unsigned char)c)
-      s++;
-
-    return (*s == (unsigned char)c ? s : NULL);
-//    Localiza la primera aparición de c (convertido a unsigned char) en la cadena apuntada
-//por s (incluyendo el carácter nulo).
-//La función retorna un puntero a partir del carácter encontrado. Si no se ha encontrado
-//el carácter, c, entonces retorna un puntero null.
-}
+//char *str_chr(char *s, int c)
+//{
+//   while(*s && *s != (unsigned char)c)
+//      s++;
+//
+//    return (*s == (unsigned char)c ? s : NULL);
+////    Localiza la primera aparición de c (convertido a unsigned char) en la cadena apuntada
+////por s (incluyendo el carácter nulo).
+////La función retorna un puntero a partir del carácter encontrado. Si no se ha encontrado
+////el carácter, c, entonces retorna un puntero null.
+//}
 
 //int str_cmp(const char *s1, const char *s2)
 //{
@@ -399,7 +435,7 @@ char *str_chr(char *s, int c)
 ////La función retorna el valor de s1. Si la copia hace que los objetos se superpongan,
 ////entonces el comportamiento no está definido.
 //}
-
+//
 //int str_ncmp(const char *s1, const char *s2, size_t n) // preguntar como trabaja!!!!
 //{
 //   while(*s1 && *s1 ++ == *s2 ++ && n --)
@@ -433,12 +469,64 @@ char *str_chr(char *s, int c)
 ////copia en el array apuntado por s1.
 //}
 //
-char *str_pbrk(const char *s1, const char *s2)
-{
-    char *aux = s1, *aux2 = s2;
+//char *str_pbrk(const char *s1, const char *s2)
+//{
+//    char *aux = s1, *aux2 = s2;
+//
+//    while(*aux && !str_chr(aux2,*aux))// aux++ aca
+//        aux ++;
+//
+//    return *aux ? aux : NULL;
+////    Localiza la primera aparición de la cadena apuntada por s1 de cualquier carácter de la
+////cadena apuntada por s2.
+////La función retorna un puntero al carácter, o un puntero nulo si ningún carácter de s2
+////apareció en s1.
+//}
 
-    while(*aux && !str_chr(aux2,*aux))// aux++ aca
-        aux ++;
+//char *str_rchr(char *s, int c)
+//{
+//   char *aux = s;
+//
+//   while(*aux ++)
+//    ;
+//   while(aux > s && *aux != (unsigned char)c)
+//     aux --;
+//
+//   return *aux == (unsigned char)c ? aux : NULL ;
+//
+////   Localiza la última aparición de c (convertido a unsigned char) en la cadena apuntada
+////por s (incluyendo el carácter nulo).
+////La función retorna un puntero a partir del carácter encontrado. Si no se ha encontrado
+////el carácter, c, entonces retorna un puntero nulo.
+//}
 
-    return *aux ? aux : NULL;
-}
+//size_t str_spn(const char *s1, const char *s2) //preguntar no hace lo que quiero.
+//{
+//    char *aux = s1;
+//    size_t cant = 0;
+//
+//    while(*aux && str_chr(s2,*aux))
+//    {
+//        cant ++;
+//        aux ++;
+//    }
+//
+//    return cant;
+////    Calcula el número de caracteres de una subcadena inicial apuntada por s1 que consiste
+////en todos los caracteres formados en la cadena apuntada por s2.
+////La función retorna la longitud de esta subcadena.
+//}
+
+//char *str_str(const char *s1, const char *s2)//preguntar no hace lo que quiero.
+//{
+//  size_t tam = strlen(s2);
+//  char *aux = s1;
+//
+//  while(*aux && strncmp(s1,s2,tam))
+//    aux ++;
+//
+//
+//  return *aux ? aux : NULL;
+//}
+
+//strtok y strxfrm no los entiendo

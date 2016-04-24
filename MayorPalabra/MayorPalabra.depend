@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461524102 source:c:\funcionesstring\mayorpalabra\funciones.c
+	<stdio.h>
+	"prototipos.h"
+
+1461522542 c:\funcionesstring\mayorpalabra\prototipos.h
+
+1461523983 source:c:\funcionesstring\mayorpalabra\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+

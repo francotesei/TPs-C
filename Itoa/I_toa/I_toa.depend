@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1461507111 source:c:\funcionesstring\itoa\i_toa\funciones.c
+	<stdio.h>
+	<string.h>
+	"prototipos.h"
+
+1461505113 c:\funcionesstring\itoa\i_toa\prototipos.h
+
+1461505268 source:c:\funcionesstring\itoa\i_toa\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+

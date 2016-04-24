@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1461512205 source:c:\funcionesstring\atoi\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipo.h"
+
+1461512806 source:c:\funcionesstring\atoi\funciones.c
+	<stdio.h>
+	"prototipo.h"
+
+1461511841 c:\funcionesstring\atoi\prototipo.h
+

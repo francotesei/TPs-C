@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1462036375 source:c:\funcionesstring\archivos\memoriaenejecucion\funciones.c
+	<stdio.h>
+	"prot_memoria.h"
+
+1462035480 c:\funcionesstring\archivos\memoriaenejecucion\prot_memoria.h
+
+1462035570 source:c:\funcionesstring\archivos\memoriaenejecucion\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prot_memoria.h"
+

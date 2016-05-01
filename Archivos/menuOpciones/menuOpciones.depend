@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1462115932 source:c:\funcionesstring\archivos\menuopciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"protMenu.h"
+
+1462115932 c:\funcionesstring\archivos\menuopciones\protmenu.h
+
+1462116088 source:c:\funcionesstring\archivos\menuopciones\funciones.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"protMenu.h"
+

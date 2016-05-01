@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1462032004 source:c:\funcionesstring\archivos\abiriarchivomsj\funciones.c
+	<stdio.h>
+	"prototipos.h"
+
+1462031296 c:\funcionesstring\archivos\abiriarchivomsj\prototipos.h
+
+1462030543 source:c:\funcionesstring\archivos\abiriarchivomsj\main.c
+	<stdio.h>
+	<stdlib.h>
+	"prototipos.h"
+

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "prototipos.h"
 #include "ProUpdate.h"
 
 int main()
@@ -8,7 +9,7 @@ int main()
     FILE *ft1;//puntero a archivo de text de longitud fija
     FILE *ft2;//puntero a archivo de text de longitud variable
     person reg;
-
+    //Crear archivos
     puts("/t/t/t/t/t/t/t/t/t/tUpdate File/n/n");
     if(!abrirArchivo(&fp,"wb",personas,CON_SIN_MSJ))
         return 1;

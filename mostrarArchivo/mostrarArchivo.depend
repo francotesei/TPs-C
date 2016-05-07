@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1462631441 source:c:\funcionesstring\archivos\mostrararchivo\funciones.c
+	<stdio.h>
+	"ArchProt.h"
+
+1462132472 c:\funcionesstring\archivos\mostrararchivo\archprot.h
+
+1462140059 source:c:\funcionesstring\archivos\mostrararchivo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArchProt.h"
+	"prototipos.h"
+
+1462031296 c:\funcionesstring\archivos\mostrararchivo\prototipos.h
+
+1462032004 source:c:\funcionesstring\archivos\mostrararchivo\funciones2.c
+	<stdio.h>
+	"prototipos.h"
+

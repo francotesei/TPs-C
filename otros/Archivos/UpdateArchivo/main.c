@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "prototipos.h"
 #include "ProUpdate.h"
 
 int main()
@@ -10,46 +9,50 @@ int main()
     FILE *ft2;//puntero a archivo de text de longitud variable
     person reg;
     //Crear archivos
-    puts("/t/t/t/t/t/t/t/t/t/tUpdate File/n/n");
-    if(!abrirArchivo(&fp,"wb",personas,CON_SIN_MSJ))
+    puts("\t\t\t\t\t\t\t\t\t\tUpdate File");
+
+    if(!abrirArchivo(&fp,"w+b",persons,CON_SIN_MSJ))
         return 1;
-    if(!abrirArchivo(&ft1,"wb",personas1,CON_SIN_MSJ))
+    if(!abrirArchivo(&ft1,"w+t",personstext,CON_SIN_MSJ))
     {
       fclose(fp);
       return 2;
     }
-    if(!abrirArchivo(&ft2,"wb",personas2,CON_SIN_MSJ))
+    if(!abrirArchivo(&ft2,"w+t",personstext2,CON_SIN_MSJ))
     {
         fclose(fp);
         fclose(ft1);
         return 3;
     }
-
-    while(getIntoPerson(reg))
+//Cargando Archivos
+    while(getIntoPerson(&reg))
     {
         //Escritura de archivo binario
-        fwrite(&reg,sizeof(person),1,fp);
+        fwrite(&reg,1,sizeof(person),fp);
         //Escritura de archivo de text de longitud fija
-        fprintf(ft1,"%8ld %-*s %-*s %c %02d %02d %04d %09.2f\n",
+        fprintf(ft1,"%08ld%-*s%-*s%c%02d%02d%04d%09.2f\n",
                 reg.dni,
-                sizeof(reg.nom),reg.nom,
-                sizeof(reg.ape),reg.ape,
+                sizeof(reg.surName),reg.surName,
+                sizeof(reg.firstName),reg.firstName,
                 reg.sex,
-                reg.day,
-                reg.month,
-                reg.year,
+                reg.fec.day,
+                reg.fec.month,
+                reg.fec.year,
                 reg.salary);
         //Escritura de archivo de text de longitud fija
-        fprintf(ft2,"%ld %s %s %c %d %d %d %.2f\n",
+        fprintf(ft2,"%ld%s%s%c%d%d%d%.2f\n",
                 reg.dni,
-                sizeof(reg.nom),reg.nom,
-                sizeof(reg.ape),reg.ape,
+                reg.surName,
+                reg.firstName,
                 reg.sex,
-                reg.day,
-                reg.month,
-                reg.year,
+                reg.fec.day,
+                reg.fec.month,
+                reg.fec.year,
                 reg.salary);
     }
+    puts("Mostrando archivo cargado\n\n");
+    showFile(&fp);
+    puts("\nFin de la carga...");
 
     fclose(fp);
     fclose(ft1);

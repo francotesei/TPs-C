@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include "ProUpdate.h"
+#include "ProLoadFile.h"
 int abrirArchivo(FILE **fp,char *modo,char *archivo,int CON_SIN)
 {
     *fp = fopen(archivo,modo);//devuelve una direccion de memoria
@@ -18,17 +18,23 @@ int abrirArchivo(FILE **fp,char *modo,char *archivo,int CON_SIN)
 
 int getIntoPerson(person *reg)
 {
-       if(menuOption("Desea ingresar datos?","YN"))
+       if(menuOption("Desea ingresar datos (Y/N)?","YN"))
         {
+            system("cls");
             fflush(stdin);
+            printf("D.N.I: ");
             scanf("%ld",&reg->dni);
              fflush(stdin);
+             printf("Apellido y Nombre: ");
             scanf("%s %s",&reg->surName,&reg->firstName);
              fflush(stdin);
+             printf("Sexo: ");
             scanf("%c",&reg->sex);
              fflush(stdin);
+             printf("Fecha de Nacimiento: ");
             scanf("%02d/%02d/%04d",&reg->fec.day,&reg->fec.month,&reg->fec.year);
              fflush(stdin);
+             printf("Salario: ");
             scanf("%f",&reg->salary); // ponfo 0.2f y no me guarda el campo ingresado
 
             return 1;
@@ -40,6 +46,7 @@ int getIntoPerson(person *reg)
 char menuOption(const char *msj,const char *option)
 {
     char op;
+    puts(" ");
     puts(msj);
     do{
     fflush(stdin);

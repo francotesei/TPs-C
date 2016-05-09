@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ProUpdate.h"
+#include "ProLoadFile.h"
 
 int main()
 {
@@ -10,7 +10,6 @@ int main()
     person reg;
     //Crear archivos
     puts("\t\t\t\t\t\t\t\t\t\tUpdate File");
-
     if(!abrirArchivo(&fp,"w+b",persons,CON_SIN_MSJ))
         return 1;
     if(!abrirArchivo(&ft1,"w+t",personstext,CON_SIN_MSJ))
@@ -50,6 +49,8 @@ int main()
                 reg.fec.year,
                 reg.salary);
     }
+
+
     puts("Mostrando archivo cargado\n\n");
     showFile(&fp);
     puts("\nFin de la carga...");

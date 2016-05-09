@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1462817527 source:c:\funcionesstring\archivos\updatefile\funupdate.c
+	<stdio.h>
+	<string.h>
+	"ProUpdate.h"
+
+1462812846 c:\funcionesstring\archivos\updatefile\proupdate.h
+
+1462817195 source:c:\funcionesstring\archivos\updatefile\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ProUpdate.h"
+

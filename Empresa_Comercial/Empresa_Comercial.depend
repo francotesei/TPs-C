@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1465089668 source:c:\funcionesstring\empresa_comercial\funcomercial.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"protComercial.h"
+
+1465070472 c:\funcionesstring\empresa_comercial\protcomercial.h
+
+1465082988 source:c:\funcionesstring\empresa_comercial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"protComercial.h"
+

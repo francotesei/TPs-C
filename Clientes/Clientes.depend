@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1465157559 source:c:\funcionesstring\clientes\funclientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"protClientes.h"
+
+1465156957 c:\funcionesstring\clientes\protclientes.h
+
+1465155811 source:c:\funcionesstring\clientes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"protClientes.h"
+

@@ -1,0 +1,41 @@
+int ponerEnPilaCirc(t_pilaCirc *pila, const t_infoPedidos *d)
+{
+    t_nodoListaCirc *nue = (t_nodoListaCirc *)malloc(sizeof(t_nodoListaCirc));
+    if(!nue)
+        return SIN_MEM;
+    nue->infoPedido = *d;
+    if(*pila)
+    {
+        nue->sig  = (*pila)->sig;
+        (*pila)->sig = nue;
+    }
+    else
+    {
+        nue->sig = nue;
+        *pila = nue;
+    }
+    return TODO_BIEN;
+}
+
+int sacarDePilaCirc(t_pilaCirc *pila, t_infoPedidos *d)
+{
+    t_nodoListaCirc *aux;
+    if(!*pila)
+        return SIN_MEM;
+
+    if(*pila != (*pila)->sig)
+    {
+        aux = (*pila)->sig;
+        *d = aux->infoPedido;
+        (*pila)->sig = aux->sig;
+        free(aux);
+    }
+    else
+    {
+        aux = *pila;
+        *d = aux->infoPedido;
+        free(aux);
+        *pila = NULL;
+    }
+    return TODO_BIEN;
+}

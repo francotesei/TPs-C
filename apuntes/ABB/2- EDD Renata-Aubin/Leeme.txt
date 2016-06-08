@@ -1,0 +1,6 @@
+Procedmiento para usar el programa:
+1)Ir a Gen-bin-vari-fija y ejecutar el proyecto se generarán tres archivos datos.bin, datos-vari.txt y datos-fija.txt.
+
+2)Ir a Lee_vari y verificar que el proyecto lee adecuadamente el archivo de texto(datos-vari.txt) y lo muestra por pantalla.
+
+3)Ir a Lee_fija y verificar que el proyecto lee adecuadamente el archivo de texto(datos-fija.txt) y lo muestra por pantalla.

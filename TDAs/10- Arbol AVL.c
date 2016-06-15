@@ -13,25 +13,25 @@ no se puede hablar de profundidad ni nivel de un árbol vacío. */
 /** precondición: Árbol NO VACÍO */
 int profundidadArbol(t_arbol *p)
 {
-   if(*p)
-   {
-      int profIzq = profundidadArbol(&(*p)->izq),
-          profDer = profundidadArbol(&(*p)->der);
-      return profIzq > profDer ? profIzq + 1 : profDer + 1;
-   }
-   return -1; /* con árbol vacío devuelve -1 = ERROR: no debía utilizar esta primitiva */
+    if(*p)
+    {
+        int profIzq = profundidadArbol(&(*p)->izq),
+            profDer = profundidadArbol(&(*p)->der);
+        return profIzq > profDer ? profIzq + 1 : profDer + 1;
+    }
+    return -1; /* con árbol vacío devuelve -1 = ERROR: no debía utilizar esta primitiva */
 }
 
 /** sin precondición, devuelve cero cuando el árbol está vacío */
 int alturaArbol(t_arbol *p)
 {
-   if(*p)
-   {
-      int altIzq = profundidadArbol(&(*p)->izq),
-          altDer = profundidadArbol(&(*p)->der);
-      return altIzq > altDer ? altIzq + 1 : altDer + 1;
-   }
-   return 0; /* con árbol vacío devuelve 0 = indicador de esta condición */
+    if(*p)
+    {
+        int altIzq = profundidadArbol(&(*p)->izq),
+            altDer = profundidadArbol(&(*p)->der);
+        return altIzq > altDer ? altIzq + 1 : altDer + 1;
+    }
+    return 0; /* con árbol vacío devuelve 0 = indicador de esta condición */
 }
 
 En ambos casos vale el > o el >= en el condicional.
@@ -45,33 +45,34 @@ Con lo cual tiene 2 ^ (h - 1) - 1 nodos, o sea 2 ^ p - 1 nodos.
 Teniendo en cuenta que las hojas estarán a la altura máxima ... lo que hablamos.
 int arbolCompleto(t_nodo *p)
 {
-   int h = alturaArbol(p);
-   return esCompleto(p, h);  /* invocando la funci'on que lo determina */
+    int h = alturaArbol(p);
+    return esCompleto(p, h);  /* invocando la funci'on que lo determina */
 }
 
 int esCompleto(t_nodo *p, int h)
 {
-   if(*p)
-   {
-      return esCompleto(&(*p)->izq, h - 1) && esCompleto(&(*p)->der, h - 1);
-   }
-   return h == 0;
+    if(*p)
+    {
+        return esCompleto(&(*p)->izq, h - 1) && esCompleto(&(*p)->der, h - 1);
+    }
+    return h == 0;
 }
 
 
-Árbol Balanceado:  dado un árbol de altura/profundidad dada es balanceado si comprende un árbol completo de altura/profundidad con una altura/profundidad uno menos que la propia.
+Árbol Balanceado:
+dado un árbol de altura/profundidad dada es balanceado si comprende un árbol completo de altura/profundidad con una altura/profundidad uno menos que la propia.
 
 int arbolBalanceado(t_nodo *p)
 {
-   int h = alturaArbol(p);
-   return esBalanceado(p, h);  /* invocando la funci'on que lo determina */
+    int h = alturaArbol(p);
+    return esBalanceado(p, h);  /* invocando la funci'on que lo determina */
 }
 
 int esBalanceado(t_nodo *p, int h)
 {
-   if(*p)
-   {
-      return esBalanceado(&(*p)->izq, h - 1) && esBalanceado(&(*p)->der, h - 1);
-   }
-   return h <= 1;
+    if(*p)
+    {
+        return esBalanceado(&(*p)->izq, h - 1) && esBalanceado(&(*p)->der, h - 1);
+    }
+    return h <= 1;
 }

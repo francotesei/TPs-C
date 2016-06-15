@@ -7,7 +7,7 @@
 typedef struct
 {
     int dni;
-}t_dato;
+} t_dato;
 
 typedef struct s_nodo
 {
@@ -32,20 +32,22 @@ int main()
     int opc;
 
     crearLista(&lista);
-    do{
-    printf("inserte una dni: ");
-    scanf("%d",&dat.dni);
-    if(!insertarEnOrden(&lista,&dat))
-        return 0;
-    puts("\n desea agregar otro dato? 0 para terminar");
-    scanf("%d",&opc);
-    }while(opc);
+    do
+    {
+        printf("inserte una dni: ");
+        scanf("%d",&dat.dni);
+        if(!insertarEnOrden(&lista,&dat))
+            return 0;
+        puts("\n desea agregar otro dato? 0 para terminar");
+        scanf("%d",&opc);
+    }
+    while(opc);
     mostrar(&lista);
 
     puts("\ningrese dni a borrar");
     scanf("%d",&dat.dni);
     if(!eliminar(&lista,&dat))
-     puts("\nDato no encontrado");
+        puts("\nDato no encontrado");
     mostrar(&lista);
     getch();
 
@@ -69,10 +71,10 @@ int insertarEnOrden(t_lista *p,t_dato *d)
         ant=act->ant;
 
     while(act && comparar(d,&act->dato)>0)
-        {
-            ant =act;
-            act=act->sig;
-        }
+    {
+        ant =act;
+        act=act->sig;
+    }
     while(ant && comparar (d, &ant->dato)<0)
     {
         act = ant;
@@ -86,9 +88,9 @@ int insertarEnOrden(t_lista *p,t_dato *d)
     nue->ant = ant;
 
     if(act)
-            act->ant =nue;
+        act->ant =nue;
     if(ant)
-            ant->sig =nue;
+        ant->sig =nue;
     *p=nue;
     return TODO_BIEN;
 }
@@ -127,63 +129,62 @@ int eliminarDesordenada(t_lista *p,t_dato *d)
         sig=aux->sig;
 
         if(ant && sig)
-            {
-              ant->sig=sig;
-              sig->ant=ant;
-            }
+        {
+            ant->sig=sig;
+            sig->ant=ant;
+        }
+        else if(ant)
+        {
+            ant->sig=NULL;
+        }
+        else if(sig)
+            sig->ant=NULL;
         else
-            if(ant)
-             {
-               ant->sig=NULL;
-             }
-             else if(sig)
-                sig->ant=NULL;
-                else
-                {
-                    *p=NULL;
-                }
+        {
+            *p=NULL;
+        }
 
-      free(aux);
-      return 1;
+        free(aux);
+        return 1;
     }
 
     return 0;
 }
 int eliminarOrdenada (t_lista*p,t_dato*d)
 {
-        t_nodo *act;
-        t_nodo *ant;
-        t_nodo *aux;
+    t_nodo *act;
+    t_nodo *ant;
+    t_nodo *aux;
 
-        act=*p;
-        if(act!=NULL)
-                ant=act->ant;
-        else
-                ant=NULL;
-        while(act&&comparar(d,&act->dato)>0)
-        {
-                ant=act;
-                act=act->sig;
-        }
-        while(ant&&comparar(d,&ant->dato)<0)
-        {
-                act=ant;
-                ant=ant->ant;
-        }
-        if(act&&comparar(d,&act->dato)==0)
-        {
-                ant=act;
-        }
-        if(ant&&comparar(d,&ant->dato)==0)
-        {
-                aux=ant;
-                if(ant)
-                        ant->ant->sig=ant->sig;
-                if(act)
-                        ant->sig->ant=ant->ant;
-                *d=ant->dato;
-                free(ant);
-                return TODO_BIEN;
-        }
-        return 0;
+    act=*p;
+    if(act!=NULL)
+        ant=act->ant;
+    else
+        ant=NULL;
+    while(act&&comparar(d,&act->dato)>0)
+    {
+        ant=act;
+        act=act->sig;
+    }
+    while(ant&&comparar(d,&ant->dato)<0)
+    {
+        act=ant;
+        ant=ant->ant;
+    }
+    if(act&&comparar(d,&act->dato)==0)
+    {
+        ant=act;
+    }
+    if(ant&&comparar(d,&ant->dato)==0)
+    {
+        aux=ant;
+        if(ant)
+            ant->ant->sig=ant->sig;
+        if(act)
+            ant->sig->ant=ant->ant;
+        *d=ant->dato;
+        free(ant);
+        return TODO_BIEN;
+    }
+    return 0;
 }

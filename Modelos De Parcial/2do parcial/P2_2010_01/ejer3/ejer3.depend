@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1467252566 source:/home/ftesei/Documents/ejer3/main.cpp
+	<iostream>
+	"Racional.h"
+
+1467252527 source:/home/ftesei/Documents/ejer3/Racional.cpp
+	<iostream>
+	"Racional.h"
+	<math.h>
+
+1467252330 /home/ftesei/Documents/ejer3/Racional.h
+

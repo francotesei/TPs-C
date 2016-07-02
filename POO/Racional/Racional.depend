@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1467309333 source:/home/ftesei/Documents/POO/Racional/main.cpp
+	<iostream>
+	"Racional.h"
+
+1467309212 /home/ftesei/Documents/POO/Racional/Racional.h
+
+1467309261 source:/home/ftesei/Documents/POO/Racional/Racional.cpp
+	<iostream>
+	"Racional.h"
+

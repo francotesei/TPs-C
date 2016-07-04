@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1467602663 source:/home/ftesei/Documents/unlam-programacion/Modelos De Parcial/2do parcial/P2_2010_01/ejer2/arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
+1467602657 /home/ftesei/Documents/unlam-programacion/Modelos De Parcial/2do parcial/P2_2010_01/ejer2/arbol.h
+
+1467600527 source:/home/ftesei/Documents/unlam-programacion/Modelos De Parcial/2do parcial/P2_2010_01/ejer2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbol.h"
+
